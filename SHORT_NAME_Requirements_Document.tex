@@ -1,0 +1,285 @@
+\documentclass[a4paper,11pt]{article}
+
+% Pakete
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman,english]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{titlesec}
+
+% Seitenränder
+\geometry{a4paper, margin=2.5cm}
+
+% Kopf- und Fußzeile
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Frontend Systems - Portfolio Assignment 01}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{THWS - Prof. Dr. Peter Braun}
+
+% Abschnitte formatieren
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Dokumenteninformationen
+\title{\textbf{Requirements Document\\[0.5em]\Large Rollenreich}}
+\author{Frontend Systems - Portfolio Assignment 01}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Author Information}
+\begin{tabular}{l@{\hspace{0.5em}:\hspace{0.5em}}l@{, }r}
+Maximilian Keller & maximilian.keller@study.thws.de & 5123018 \\
+Tom Knoblach & tom.knoblach@study.thws.de & 5123034 \\
+David Heppenheimer & david.heppenheimer@study.thws.de & 5123026 \\
+Zacharias Priller & zacharias.priller@study.thws.de & 5123014 \\
+\end{tabular}
+
+\tableofcontents
+\newpage
+
+\section{Project Overview}
+Rollenreich ist ein innovativer Online-Shop, der sich auf den Verkauf von hochwertigem und ungewöhnlichem Toilettenzubehör spezialisiert hat. Das Hauptprodukt sind Toilettenpapierrollen in verschiedenen Ausführungen, von luxuriösen Gold- und Silbereditionen bis hin zu Markenkollaborationen mit bekannten Modemarken. Das Projekt zielt darauf ab, einen amüsanten, aber funktional hochwertigen Webshop zu entwickeln, der Kunden ein einzigartiges Einkaufserlebnis im Bereich der Badezimmerausstattung bietet.
+
+\subsection{Project Background}
+Die Idee für Rollenreich entstand aus der Beobachtung, dass selbst alltägliche Produkte wie Toilettenpapier durch kreative Gestaltung und Marketingkonzepte zu Lifestyle-Produkten werden können. In einer Zeit, in der Personalisierung und Individualität auch im Wohnbereich immer wichtiger werden, bietet Rollenreich eine humorvolle, aber qualitativ hochwertige Alternative zu herkömmlichen Badezimmerprodukten. Das Projekt dient als Universitätsprojekt für den Frontend-Kurs und soll die Entwicklung eines vollständigen E-Commerce-Systems demonstrieren.
+
+\subsection{Target Audience}
+Die Zielgruppe von Rollenreich umfasst:
+\begin{itemize}
+    \item Designbewusste Konsumenten, die Wert auf ästhetische Details in ihrem Zuhause legen
+    \item Geschenkkäufer, die nach ungewöhnlichen und humorvollen Präsenten suchen
+    \item Sammler von limitierten Editionen und Markenkollaborationen
+    \item Personen mit höherem Einkommen, die bereit sind, für Luxusversionen alltäglicher Produkte zu zahlen
+    \item Umweltbewusste Verbraucher, die nach nachhaltigen Toilettenpapier-Alternativen suchen
+    \item Junge Erwachsene (25-40 Jahre), die offen für innovative und unkonventionelle Produkte sind
+\end{itemize}
+
+\subsection{Project Goals}
+Die Hauptziele des Rollenreich-Projekts sind:
+\begin{itemize}
+    \item Entwicklung eines benutzerfreundlichen, responsiven Webshops mit intuitivem Einkaufserlebnis
+    \item Implementierung eines sicheren und effizienten Bestell- und Zahlungssystems
+    \item Schaffung eines unterhaltsamen und einprägsamen Markenauftritts für Toilettenzubehör
+    \item Integration von Kundenbindungsfunktionen wie Newsletter, Abonnement-Modellen und Bewertungssystem
+    \item Aufbau einer Community rund um das Thema Badezimmerkultur und Design
+    \item Demonstration technischer Fähigkeiten in der Frontend-Entwicklung mit React
+\end{itemize}
+
+\section{Key Features}
+Die folgenden Funktionen sind für den Rollenreich-Webshop geplant, unterteilt in unbedingt erforderliche und wünschenswerte Features.
+
+\subsection{Must-have Features}
+\begin{enumerate}[label=\textbf{MF\arabic*:}]
+    \item \textbf{Produktkatalog} - Übersichtliche Darstellung aller Produkte mit Filterfunktionen nach Kategorien (Luxus, Markenkooperationen, Umweltfreundlich), Preisen und Verfügbarkeit
+    \item \textbf{Benutzerkonten} - Registrierung und Login-System mit persönlichem Profil, Bestellhistorie und gespeicherten Zahlungsinformationen
+    \item \textbf{Warenkorb und Checkout} - Funktionaler Warenkorb mit Mengenanpassung und sicherer, mehrstufiger Checkout-Prozess
+    \item \textbf{Produktdetailseiten} - Detaillierte Informationen zu jedem Produkt mit hochwertigen Bildern, Beschreibungen, Preisen und Verfügbarkeit
+    \item \textbf{Responsive Design} - Vollständige Funktionalität auf allen Geräten (Desktop, Tablet, Smartphone)
+    \item \textbf{Bewertungssystem} - Möglichkeit für Kunden, Produkte zu bewerten und Rezensionen zu hinterlassen
+    \item \textbf{Suchfunktion} - Leistungsstarke Suchfunktion mit Autovervollständigung und Filteroptionen
+\end{enumerate}
+
+\subsection{Nice-to-have Features}
+\begin{enumerate}[label=\textbf{NF\arabic*:}]
+    \item \textbf{Newsletter-System} - Anmeldung für regelmäßige Updates zu neuen Produkten und Sonderangeboten
+    \item \textbf{Abonnement-Modelle} - Regelmäßige Lieferung von Toilettenpapier mit Rabattvorteilen und exklusiven Produkten
+    \item \textbf{Wunschliste} - Möglichkeit, Produkte für späteren Kauf zu speichern
+    \item \textbf{Social Media Integration} - Teilen von Produkten auf verschiedenen sozialen Plattformen
+    \item \textbf{Personalisierte Produktempfehlungen} - Basierend auf Kaufhistorie und Browsing-Verhalten
+    \item \textbf{Live-Chat-Support} - Direkter Kundenservice für Fragen und Probleme
+    \item \textbf{Limitierte Editionen} - Zeitlich begrenzte Sonderangebote und exklusive Kollektionen
+    \item \textbf{Virtueller Badezimmer-Designer} - Tool zur Visualisierung von Produkten im eigenen Badezimmer
+\end{enumerate}
+
+\section{User Roles and Interactions}
+Rollenreich bedient verschiedene Benutzertypen mit unterschiedlichen Bedürfnissen und Interaktionsmustern.
+
+\subsection{User Role 1: Nicht registrierter Besucher}
+\begin{itemize}
+    \item \textbf{Description:} Erstmalige oder gelegentliche Besucher der Website, die noch kein Benutzerkonto erstellt haben
+    \item \textbf{Responsibilities:} Keine spezifischen Verantwortlichkeiten im System
+    \item \textbf{Key Interactions:} 
+    \begin{itemize}
+        \item Durchsuchen des Produktkatalogs
+        \item Lesen von Produktbewertungen
+        \item Hinzufügen von Produkten zum Warenkorb
+        \item Durchführen eines Gastkaufs
+        \item Registrierung für ein Benutzerkonto
+        \item Anmeldung zum Newsletter
+    \end{itemize}
+\end{itemize}
+
+\subsection{User Role 2: Registrierter Kunde}
+\begin{itemize}
+    \item \textbf{Description:} Benutzer mit einem Konto, die regelmäßig einkaufen oder die Vorteile eines registrierten Benutzers nutzen möchten
+    \item \textbf{Responsibilities:} Pflege der eigenen Kontoinformationen, Einhaltung der Nutzungsbedingungen
+    \item \textbf{Key Interactions:} 
+    \begin{itemize}
+        \item Anmelden und Verwalten des persönlichen Profils
+        \item Speichern von Liefer- und Zahlungsinformationen
+        \item Einsehen der Bestellhistorie
+        \item Verfassen von Produktbewertungen
+        \item Verwalten von Abonnements
+        \item Erstellen und Bearbeiten von Wunschlisten
+        \item Teilnahme an Kundenbindungsprogrammen
+    \end{itemize}
+\end{itemize}
+
+\subsection{User Role 3: Abonnent}
+\begin{itemize}
+    \item \textbf{Description:} Registrierte Kunden, die ein regelmäßiges Lieferabonnement für Toilettenpapier abgeschlossen haben
+    \item \textbf{Responsibilities:} Sicherstellen aktueller Zahlungsinformationen, rechtzeitige Änderung oder Kündigung von Abonnements
+    \item \textbf{Key Interactions:} 
+    \begin{itemize}
+        \item Auswahl und Anpassung von Abonnement-Plänen
+        \item Änderung der Lieferfrequenz
+        \item Pausieren oder Kündigen von Abonnements
+        \item Zugriff auf exklusive Abonnenten-Angebote
+        \item Verwaltung automatischer Zahlungen
+    \end{itemize}
+\end{itemize}
+
+\subsection{User Role 4: Administrator}
+\begin{itemize}
+    \item \textbf{Description:} Mitarbeiter mit umfassenden Rechten zur Verwaltung des Webshops
+    \item \textbf{Responsibilities:} Pflege des Produktkatalogs, Bearbeitung von Bestellungen, Kundenverwaltung
+    \item \textbf{Key Interactions:} 
+    \begin{itemize}
+        \item Hinzufügen, Bearbeiten und Entfernen von Produkten
+        \item Verwaltung von Bestellungen und Bestellstatus
+        \item Bearbeitung von Kundendaten und -anfragen
+        \item Moderation von Produktbewertungen
+        \item Erstellung und Versand von Newslettern
+        \item Überwachung des Systemstatus
+        \item Generierung von Berichten und Statistiken
+    \end{itemize}
+\end{itemize}
+
+\section{User Stories / Use Cases}
+Im Folgenden werden die wichtigsten User Stories und Use Cases für den Rollenreich-Webshop beschrieben.
+
+\subsection{User Story 1: Produktsuche und -kauf}
+\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{ID} & US-001 \\
+    \hline
+    \textbf{Title} & Produktsuche und Kauf einer Luxus-Toilettenpapierrolle \\
+    \hline
+    \textbf{User Role} & Nicht registrierter Besucher \\
+    \hline
+    \textbf{Description} & Als \textit{nicht registrierter Besucher} möchte ich \textit{nach Luxus-Toilettenpapierrollen suchen und eine kaufen}, damit \textit{ich ein besonderes Geschenk für einen Freund finden kann}. \\
+    \hline
+    \textbf{Acceptance Criteria} & 
+    \begin{itemize}
+        \item Benutzer kann die Suchfunktion nutzen, um nach "Luxus" oder "Gold" zu suchen
+        \item Benutzer kann Produkte nach Preis, Verfügbarkeit und Kategorie filtern
+        \item Benutzer kann Produktdetails und Bewertungen einsehen
+        \item Benutzer kann ein Produkt in den Warenkorb legen
+        \item Benutzer kann den Checkout-Prozess als Gast abschließen
+        \item Benutzer erhält eine Bestellbestätigung per E-Mail
+    \end{itemize} \\
+    \hline
+    \textbf{Priority} & Hoch \\
+    \hline
+\end{tabularx}
+
+\subsection{User Story 2: Benutzerkonto erstellen}
+\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{ID} & US-002 \\
+    \hline
+    \textbf{Title} & Erstellung eines Benutzerkontos \\
+    \hline
+    \textbf{User Role} & Nicht registrierter Besucher \\
+    \hline
+    \textbf{Description} & Als \textit{nicht registrierter Besucher} möchte ich \textit{ein Benutzerkonto erstellen}, damit \textit{ich meine Bestellungen verfolgen und von Stammkundenvorteilen profitieren kann}. \\
+    \hline
+    \textbf{Acceptance Criteria} & 
+    \begin{itemize}
+        \item Benutzer kann über einen "Registrieren"-Button ein Konto erstellen
+        \item Benutzer muss E-Mail, Passwort und persönliche Informationen angeben
+        \item System validiert die E-Mail-Adresse und Passwortstärke
+        \item Benutzer erhält eine Bestätigungs-E-Mail mit Aktivierungslink
+        \item Nach Aktivierung kann sich der Benutzer mit seinen Zugangsdaten anmelden
+        \item Benutzer kann sein Profil nach der Anmeldung einsehen und bearbeiten
+    \end{itemize} \\
+    \hline
+    \textbf{Priority} & Hoch \\
+    \hline
+\end{tabularx}
+
+\subsection{User Story 3: Abonnement einrichten}
+\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{ID} & US-003 \\
+    \hline
+    \textbf{Title} & Einrichtung eines Toilettenpapier-Abonnements \\
+    \hline
+    \textbf{User Role} & Registrierter Kunde \\
+    \hline
+    \textbf{Description} & Als \textit{registrierter Kunde} möchte ich \textit{ein regelmäßiges Lieferabonnement für Toilettenpapier einrichten}, damit \textit{ich nie mehr ohne dastehe und von Rabatten profitieren kann}. \\
+    \hline
+    \textbf{Acceptance Criteria} & 
+    \begin{itemize}
+        \item Benutzer kann aus verschiedenen Abonnement-Optionen wählen (monatlich, vierteljährlich)
+        \item Benutzer kann Produkttyp und Menge für das Abonnement festlegen
+        \item System zeigt Rabatte und Vorteile des Abonnements deutlich an
+        \item Benutzer muss Zahlungsinformationen für wiederkehrende Zahlungen hinterlegen
+        \item Benutzer erhält eine Bestätigung des eingerichteten Abonnements
+        \item Benutzer kann das Abonnement jederzeit in seinem Profil einsehen und verwalten
+    \end{itemize} \\
+    \hline
+    \textbf{Priority} & Mittel \\
+    \hline
+\end{tabularx}
+
+\subsection{User Story 4: Produktbewertung abgeben}
+\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{ID} & US-004 \\
+    \hline
+    \textbf{Title} & Abgabe einer Produktbewertung \\
+    \hline
+    \textbf{User Role} & Registrierter Kunde \\
+    \hline
+    \textbf{Description} & Als \textit{registrierter Kunde} möchte ich \textit{eine Bewertung für ein kürzlich gekauftes Produkt abgeben}, damit \textit{ich anderen Kunden meine Erfahrung mitteilen und dem Hersteller Feedback geben kann}. \\
+    \hline
+    \textbf{Acceptance Criteria} & 
+    \begin{itemize}
+        \item Benutzer kann nur Produkte bewerten, die er tatsächlich gekauft hat
+        \item Bewertungssystem ermöglicht Sternebewertung (1-5) und Textkommentar
+        \item Benutzer kann Fotos zu seiner Bewertung hochladen
+        \item Bewertungen werden moderiert, bevor sie veröffentlicht werden
+        \item Andere Benutzer können Bewertungen als hilfreich markieren
+        \item Benutzer kann seine eigenen Bewertungen später bearbeiten oder löschen
+    \end{itemize} \\
+    \hline
+    \textbf{Priority} & Mittel \\
+    \hline
+\end{tabularx}
+
+\subsection{User Story 5: Newsletter-Anmeldung}
+\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{ID} & US-005 \\
+    \hline
+    \textbf{Title} & Anmeldung zum Newsletter \\
+    \hline
+    \textbf{User Role}
+\end{tabularx}
+
+
+\end{document}
