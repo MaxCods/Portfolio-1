@@ -1,11 +1,11 @@
 \documentclass[a4paper,11pt]{article}
 
-% Pakete
+% Packages
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[ngerman,english]{babel}
+\usepackage[english]{babel} % Set language to English
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage{hyperref} % Required for clickable email links
 \usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage{xcolor}
@@ -14,272 +14,340 @@
 \usepackage{geometry}
 \usepackage{titlesec}
 
-% Seitenränder
+% Page margins
 \geometry{a4paper, margin=2.5cm}
 
-% Kopf- und Fußzeile
+% Header and Footer
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{Frontend Systems - Portfolio Assignment 01}
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{THWS - Prof. Dr. Peter Braun}
 
-% Abschnitte formatieren
+% Section formatting
 \titleformat{\section}
-  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}
-  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
 
-% Dokumenteninformationen
+% Document information
 \title{\textbf{Requirements Document\\[0.5em]\Large Rollenreich}}
 \author{Frontend Systems - Portfolio Assignment 01}
-\date{\today}
+\date{April 9, 2025} % Use specific date or \today
 
 \begin{document}
 
 \maketitle
 
+% Updated Author Information section based on Search Result [4]
 \section*{Author Information}
-\begin{tabular}{l@{\hspace{0.5em}:\hspace{0.5em}}l@{, }r}
-Maximilian Keller & maximilian.keller@study.thws.de & 5123018 \\
-Tom Knoblach & tom.knoblach@study.thws.de & 5123034 \\
-David Heppenheimer & david.heppenheimer@study.thws.de & 5123026 \\
-Zacharias Priller & zacharias.priller@study.thws.de & 5123014 \\
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Name} & \textbf{Email Address} & \textbf{Matriculation Number} \\
+\hline
+Maximilian Keller & \href{mailto:maximilian.keller@study.thws.de}{maximilian.keller@study.thws.de} & 5123018 \\
+\hline
+Tom Knoblach & \href{mailto:tom.knoblach@study.thws.de}{tom.knoblach@study.thws.de} & 5123034 \\
+\hline
+David Heppenheimer & \href{mailto:david.heppenheimer@study.thws.de}{david.heppenheimer@study.thws.de} & 5123026 \\
+\hline
+Zacharias Priller & \href{mailto:zacharias.priller@study.thws.de}{zacharias.priller@study.thws.de} & 5123014 \\
+\hline
 \end{tabular}
+\end{center}
 
 \tableofcontents
+
 \newpage
 
 \section{Project Overview}
-Rollenreich ist ein innovativer Online-Shop, der sich auf den Verkauf von hochwertigem und ungewöhnlichem Toilettenzubehör spezialisiert hat. Das Hauptprodukt sind Toilettenpapierrollen in verschiedenen Ausführungen, von luxuriösen Gold- und Silbereditionen bis hin zu Markenkollaborationen mit bekannten Modemarken. Das Projekt zielt darauf ab, einen amüsanten, aber funktional hochwertigen Webshop zu entwickeln, der Kunden ein einzigartiges Einkaufserlebnis im Bereich der Badezimmerausstattung bietet.
+Rollenreich is an innovative online shop specializing in the sale of high-quality and unusual toilet accessories. The main product is toilet paper rolls in various designs, from luxurious gold and silver editions to brand collaborations with well-known fashion brands. The project aims to develop an amusing but functionally high-quality webshop that offers customers a unique shopping experience in the bathroom equipment sector.
 
 \subsection{Project Background}
-Die Idee für Rollenreich entstand aus der Beobachtung, dass selbst alltägliche Produkte wie Toilettenpapier durch kreative Gestaltung und Marketingkonzepte zu Lifestyle-Produkten werden können. In einer Zeit, in der Personalisierung und Individualität auch im Wohnbereich immer wichtiger werden, bietet Rollenreich eine humorvolle, aber qualitativ hochwertige Alternative zu herkömmlichen Badezimmerprodukten. Das Projekt dient als Universitätsprojekt für den Frontend-Kurs und soll die Entwicklung eines vollständigen E-Commerce-Systems demonstrieren.
+The idea for Rollenreich arose from the observation that even everyday products like toilet paper can become lifestyle products through creative design and marketing concepts. In an era where personalization and individuality are increasingly important, even in the home, Rollenreich offers a humorous yet high-quality alternative to conventional bathroom products. The project serves as a university project for the Frontend Systems course and aims to demonstrate the development of a complete e-commerce system.
 
 \subsection{Target Audience}
-Die Zielgruppe von Rollenreich umfasst:
+The target audience for Rollenreich includes:
 \begin{itemize}
-    \item Designbewusste Konsumenten, die Wert auf ästhetische Details in ihrem Zuhause legen
-    \item Geschenkkäufer, die nach ungewöhnlichen und humorvollen Präsenten suchen
-    \item Sammler von limitierten Editionen und Markenkollaborationen
-    \item Personen mit höherem Einkommen, die bereit sind, für Luxusversionen alltäglicher Produkte zu zahlen
-    \item Umweltbewusste Verbraucher, die nach nachhaltigen Toilettenpapier-Alternativen suchen
-    \item Junge Erwachsene (25-40 Jahre), die offen für innovative und unkonventionelle Produkte sind
+    \item Design-conscious consumers who value aesthetic details in their homes
+    \item Gift buyers looking for unusual and humorous presents
+    \item Collectors of limited editions and brand collaborations
+    \item Individuals with higher incomes willing to pay for luxury versions of everyday products
+    \item Environmentally conscious consumers seeking sustainable toilet paper alternatives
+    \item Young adults (25-40 years) open to innovative and unconventional products
 \end{itemize}
 
 \subsection{Project Goals}
-Die Hauptziele des Rollenreich-Projekts sind:
+The main goals of the Rollenreich project are:
 \begin{itemize}
-    \item Entwicklung eines benutzerfreundlichen, responsiven Webshops mit intuitivem Einkaufserlebnis
-    \item Implementierung eines sicheren und effizienten Bestell- und Zahlungssystems
-    \item Schaffung eines unterhaltsamen und einprägsamen Markenauftritts für Toilettenzubehör
-    \item Integration von Kundenbindungsfunktionen wie Newsletter, Abonnement-Modellen und Bewertungssystem
-    \item Aufbau einer Community rund um das Thema Badezimmerkultur und Design
-    \item Demonstration technischer Fähigkeiten in der Frontend-Entwicklung mit React
+    \item Develop a user-friendly, responsive webshop with an intuitive shopping experience
+    \item Implement a secure and efficient ordering and payment system
+    \item Create an entertaining and memorable brand presence for toilet accessories
+    \item Integrate customer loyalty features such as newsletters, subscription models, and a review system
+    \item Build a community around bathroom culture and design
+    \item Demonstrate technical skills in frontend development using React
 \end{itemize}
 
 \section{Key Features}
-Die folgenden Funktionen sind für den Rollenreich-Webshop geplant, unterteilt in unbedingt erforderliche und wünschenswerte Features.
+The following features are planned for the Rollenreich webshop, divided into must-have and nice-to-have features.
 
 \subsection{Must-have Features}
 \begin{enumerate}[label=\textbf{MF\arabic*:}]
-    \item \textbf{Produktkatalog} - Übersichtliche Darstellung aller Produkte mit Filterfunktionen nach Kategorien (Luxus, Markenkooperationen, Umweltfreundlich), Preisen und Verfügbarkeit
-    \item \textbf{Benutzerkonten} - Registrierung und Login-System mit persönlichem Profil, Bestellhistorie und gespeicherten Zahlungsinformationen
-    \item \textbf{Warenkorb und Checkout} - Funktionaler Warenkorb mit Mengenanpassung und sicherer, mehrstufiger Checkout-Prozess
-    \item \textbf{Produktdetailseiten} - Detaillierte Informationen zu jedem Produkt mit hochwertigen Bildern, Beschreibungen, Preisen und Verfügbarkeit
-    \item \textbf{Responsive Design} - Vollständige Funktionalität auf allen Geräten (Desktop, Tablet, Smartphone)
-    \item \textbf{Bewertungssystem} - Möglichkeit für Kunden, Produkte zu bewerten und Rezensionen zu hinterlassen
-    \item \textbf{Suchfunktion} - Leistungsstarke Suchfunktion mit Autovervollständigung und Filteroptionen
+    \item \textbf{Product Catalog} - Clear presentation of all products with filter functions by categories (Luxury, Brand Collaborations, Eco-Friendly), prices, and availability.
+    \item \textbf{User Accounts} - Registration and login system with personal profile, order history, and saved payment information.
+    \item \textbf{Shopping Cart and Checkout} - Functional shopping cart with quantity adjustment and a secure, multi-step checkout process.
+    \item \textbf{Product Detail Pages} - Detailed information on each product with high-quality images, descriptions, prices, and availability.
+    \item \textbf{Responsive Design} - Full functionality on all devices (Desktop, Tablet, Smartphone).
+    \item \textbf{Review System} - Ability for customers to rate products and leave reviews.
+    \item \textbf{Search Functionality} - Powerful search function with auto-completion and filter options.
 \end{enumerate}
 
 \subsection{Nice-to-have Features}
 \begin{enumerate}[label=\textbf{NF\arabic*:}]
-    \item \textbf{Newsletter-System} - Anmeldung für regelmäßige Updates zu neuen Produkten und Sonderangeboten
-    \item \textbf{Abonnement-Modelle} - Regelmäßige Lieferung von Toilettenpapier mit Rabattvorteilen und exklusiven Produkten
-    \item \textbf{Wunschliste} - Möglichkeit, Produkte für späteren Kauf zu speichern
-    \item \textbf{Social Media Integration} - Teilen von Produkten auf verschiedenen sozialen Plattformen
-    \item \textbf{Personalisierte Produktempfehlungen} - Basierend auf Kaufhistorie und Browsing-Verhalten
-    \item \textbf{Live-Chat-Support} - Direkter Kundenservice für Fragen und Probleme
-    \item \textbf{Limitierte Editionen} - Zeitlich begrenzte Sonderangebote und exklusive Kollektionen
-    \item \textbf{Virtueller Badezimmer-Designer} - Tool zur Visualisierung von Produkten im eigenen Badezimmer
+    \item \textbf{Newsletter System} - Sign-up for regular updates on new products and special offers.
+    \item \textbf{Subscription Models} - Regular delivery of toilet paper with discount benefits and exclusive products.
+    \item \textbf{Wishlist} - Ability to save products for later purchase.
+    \item \textbf{Social Media Integration} - Sharing products on various social platforms.
+    \item \textbf{Personalized Product Recommendations} - Based on purchase history and browsing behavior.
+    \item \textbf{Live Chat Support} - Direct customer service for questions and issues.
+    \item \textbf{Limited Editions} - Time-limited special offers and exclusive collections.
+    \item \textbf{Virtual Bathroom Designer} - Tool for visualizing products in one's own bathroom.
 \end{enumerate}
 
 \section{User Roles and Interactions}
-Rollenreich bedient verschiedene Benutzertypen mit unterschiedlichen Bedürfnissen und Interaktionsmustern.
+Rollenreich serves different types of users with varying needs and interaction patterns.
 
-\subsection{User Role 1: Nicht registrierter Besucher}
+\subsection{User Role 1: Unregistered Visitor}
 \begin{itemize}
-    \item \textbf{Description:} Erstmalige oder gelegentliche Besucher der Website, die noch kein Benutzerkonto erstellt haben
-    \item \textbf{Responsibilities:} Keine spezifischen Verantwortlichkeiten im System
-    \item \textbf{Key Interactions:} 
+    \item \textbf{Description:} First-time or occasional visitors to the website who have not yet created a user account.
+    \item \textbf{Responsibilities:} No specific responsibilities within the system.
+    \item \textbf{Key Interactions:}
     \begin{itemize}
-        \item Durchsuchen des Produktkatalogs
-        \item Lesen von Produktbewertungen
-        \item Hinzufügen von Produkten zum Warenkorb
-        \item Durchführen eines Gastkaufs
-        \item Registrierung für ein Benutzerkonto
-        \item Anmeldung zum Newsletter
+        \item Browsing the product catalog
+        \item Reading product reviews
+        \item Adding products to the shopping cart
+        \item Performing a guest checkout
+        \item Registering for a user account
+        \item Signing up for the newsletter
     \end{itemize}
 \end{itemize}
 
-\subsection{User Role 2: Registrierter Kunde}
+\subsection{User Role 2: Registered Customer}
 \begin{itemize}
-    \item \textbf{Description:} Benutzer mit einem Konto, die regelmäßig einkaufen oder die Vorteile eines registrierten Benutzers nutzen möchten
-    \item \textbf{Responsibilities:} Pflege der eigenen Kontoinformationen, Einhaltung der Nutzungsbedingungen
-    \item \textbf{Key Interactions:} 
+    \item \textbf{Description:} Users with an account who shop regularly or want to use the benefits of being a registered user.
+    \item \textbf{Responsibilities:} Maintaining their own account information, adhering to terms of service.
+    \item \textbf{Key Interactions:}
     \begin{itemize}
-        \item Anmelden und Verwalten des persönlichen Profils
-        \item Speichern von Liefer- und Zahlungsinformationen
-        \item Einsehen der Bestellhistorie
-        \item Verfassen von Produktbewertungen
-        \item Verwalten von Abonnements
-        \item Erstellen und Bearbeiten von Wunschlisten
-        \item Teilnahme an Kundenbindungsprogrammen
+        \item Logging in and managing personal profile
+        \item Saving delivery and payment information
+        \item Viewing order history
+        \item Writing product reviews
+        \item Managing subscriptions (if applicable)
+        \item Creating and editing wishlists
+        \item Participating in loyalty programs
     \end{itemize}
 \end{itemize}
 
-\subsection{User Role 3: Abonnent}
+\subsection{User Role 3: Subscriber}
 \begin{itemize}
-    \item \textbf{Description:} Registrierte Kunden, die ein regelmäßiges Lieferabonnement für Toilettenpapier abgeschlossen haben
-    \item \textbf{Responsibilities:} Sicherstellen aktueller Zahlungsinformationen, rechtzeitige Änderung oder Kündigung von Abonnements
-    \item \textbf{Key Interactions:} 
+    \item \textbf{Description:} Registered customers who have signed up for a regular delivery subscription for toilet paper.
+    \item \textbf{Responsibilities:} Ensuring up-to-date payment information, timely modification or cancellation of subscriptions.
+    \item \textbf{Key Interactions:}
     \begin{itemize}
-        \item Auswahl und Anpassung von Abonnement-Plänen
-        \item Änderung der Lieferfrequenz
-        \item Pausieren oder Kündigen von Abonnements
-        \item Zugriff auf exklusive Abonnenten-Angebote
-        \item Verwaltung automatischer Zahlungen
+        \item Selecting and customizing subscription plans
+        \item Changing delivery frequency
+        \item Pausing or canceling subscriptions
+        \item Accessing exclusive subscriber offers
+        \item Managing automatic payments
     \end{itemize}
 \end{itemize}
 
 \subsection{User Role 4: Administrator}
 \begin{itemize}
-    \item \textbf{Description:} Mitarbeiter mit umfassenden Rechten zur Verwaltung des Webshops
-    \item \textbf{Responsibilities:} Pflege des Produktkatalogs, Bearbeitung von Bestellungen, Kundenverwaltung
-    \item \textbf{Key Interactions:} 
+    \item \textbf{Description:} Staff members with comprehensive rights to manage the webshop.
+    \item \textbf{Responsibilities:} Maintaining the product catalog, processing orders, customer management.
+    \item \textbf{Key Interactions:}
     \begin{itemize}
-        \item Hinzufügen, Bearbeiten und Entfernen von Produkten
-        \item Verwaltung von Bestellungen und Bestellstatus
-        \item Bearbeitung von Kundendaten und -anfragen
-        \item Moderation von Produktbewertungen
-        \item Erstellung und Versand von Newslettern
-        \item Überwachung des Systemstatus
-        \item Generierung von Berichten und Statistiken
+        \item Adding, editing, and removing products
+        \item Managing orders and order statuses
+        \item Handling customer data and inquiries
+        \item Moderating product reviews
+        \item Creating and sending newsletters
+        \item Monitoring system status
+        \item Generating reports and statistics
     \end{itemize}
 \end{itemize}
 
 \section{User Stories / Use Cases}
-Im Folgenden werden die wichtigsten User Stories und Use Cases für den Rollenreich-Webshop beschrieben.
+The following describe the main user stories and use cases for the Rollenreich webshop.
 
-\subsection{User Story 1: Produktsuche und -kauf}
+\subsection{User Story 1: Product Search and Purchase}
 \begin{tabularx}{\textwidth}{|l|X|}
-    \hline
-    \textbf{ID} & US-001 \\
-    \hline
-    \textbf{Title} & Produktsuche und Kauf einer Luxus-Toilettenpapierrolle \\
-    \hline
-    \textbf{User Role} & Nicht registrierter Besucher \\
-    \hline
-    \textbf{Description} & Als \textit{nicht registrierter Besucher} möchte ich \textit{nach Luxus-Toilettenpapierrollen suchen und eine kaufen}, damit \textit{ich ein besonderes Geschenk für einen Freund finden kann}. \\
-    \hline
-    \textbf{Acceptance Criteria} & 
-    \begin{itemize}
-        \item Benutzer kann die Suchfunktion nutzen, um nach "Luxus" oder "Gold" zu suchen
-        \item Benutzer kann Produkte nach Preis, Verfügbarkeit und Kategorie filtern
-        \item Benutzer kann Produktdetails und Bewertungen einsehen
-        \item Benutzer kann ein Produkt in den Warenkorb legen
-        \item Benutzer kann den Checkout-Prozess als Gast abschließen
-        \item Benutzer erhält eine Bestellbestätigung per E-Mail
-    \end{itemize} \\
-    \hline
-    \textbf{Priority} & Hoch \\
-    \hline
+\hline
+\textbf{ID} & US-001 \\
+\hline
+\textbf{Title} & Search for and Purchase a Luxury Toilet Paper Roll \\
+\hline
+\textbf{User Role} & Unregistered Visitor \\
+\hline
+\textbf{Description} & As an \textit{unregistered visitor}, I want to \textit{search for luxury toilet paper rolls and purchase one}, so that \textit{I can find a special gift for a friend}. \\
+\hline
+\textbf{Acceptance Criteria} &
+\begin{itemize}[noitemsep, topsep=0pt] % Reduced spacing for inner lists
+    \item User can use the search function to search for "Luxury" or "Gold".
+    \item User can filter products by price, availability, and category.
+    \item User can view product details and reviews.
+    \item User can add a product to the shopping cart.
+    \item User can complete the checkout process as a guest.
+    \item User receives an order confirmation via email.
+\end{itemize} \\
+\hline
+\textbf{Priority} & High \\
+\hline
 \end{tabularx}
 
-\subsection{User Story 2: Benutzerkonto erstellen}
+\subsection{User Story 2: Create User Account}
 \begin{tabularx}{\textwidth}{|l|X|}
-    \hline
-    \textbf{ID} & US-002 \\
-    \hline
-    \textbf{Title} & Erstellung eines Benutzerkontos \\
-    \hline
-    \textbf{User Role} & Nicht registrierter Besucher \\
-    \hline
-    \textbf{Description} & Als \textit{nicht registrierter Besucher} möchte ich \textit{ein Benutzerkonto erstellen}, damit \textit{ich meine Bestellungen verfolgen und von Stammkundenvorteilen profitieren kann}. \\
-    \hline
-    \textbf{Acceptance Criteria} & 
-    \begin{itemize}
-        \item Benutzer kann über einen "Registrieren"-Button ein Konto erstellen
-        \item Benutzer muss E-Mail, Passwort und persönliche Informationen angeben
-        \item System validiert die E-Mail-Adresse und Passwortstärke
-        \item Benutzer erhält eine Bestätigungs-E-Mail mit Aktivierungslink
-        \item Nach Aktivierung kann sich der Benutzer mit seinen Zugangsdaten anmelden
-        \item Benutzer kann sein Profil nach der Anmeldung einsehen und bearbeiten
-    \end{itemize} \\
-    \hline
-    \textbf{Priority} & Hoch \\
-    \hline
+\hline
+\textbf{ID} & US-002 \\
+\hline
+\textbf{Title} & Create a User Account \\
+\hline
+\textbf{User Role} & Unregistered Visitor \\
+\hline
+\textbf{Description} & As an \textit{unregistered visitor}, I want to \textit{create a user account}, so that \textit{I can track my orders and benefit from regular customer advantages}. \\
+\hline
+\textbf{Acceptance Criteria} &
+\begin{itemize}[noitemsep, topsep=0pt]
+    \item User can create an account via a "Register" button.
+    \item User must provide email, password, and personal information.
+    \item System validates the email address format and password strength.
+    \item User receives a confirmation email (possibly with an activation link).
+    \item After activation/confirmation, the user can log in with their credentials.
+    \item User can view and edit their profile after logging in.
+\end{itemize} \\
+\hline
+\textbf{Priority} & High \\
+\hline
 \end{tabularx}
 
-\subsection{User Story 3: Abonnement einrichten}
+\subsection{User Story 3: Set Up Subscription}
 \begin{tabularx}{\textwidth}{|l|X|}
-    \hline
-    \textbf{ID} & US-003 \\
-    \hline
-    \textbf{Title} & Einrichtung eines Toilettenpapier-Abonnements \\
-    \hline
-    \textbf{User Role} & Registrierter Kunde \\
-    \hline
-    \textbf{Description} & Als \textit{registrierter Kunde} möchte ich \textit{ein regelmäßiges Lieferabonnement für Toilettenpapier einrichten}, damit \textit{ich nie mehr ohne dastehe und von Rabatten profitieren kann}. \\
-    \hline
-    \textbf{Acceptance Criteria} & 
-    \begin{itemize}
-        \item Benutzer kann aus verschiedenen Abonnement-Optionen wählen (monatlich, vierteljährlich)
-        \item Benutzer kann Produkttyp und Menge für das Abonnement festlegen
-        \item System zeigt Rabatte und Vorteile des Abonnements deutlich an
-        \item Benutzer muss Zahlungsinformationen für wiederkehrende Zahlungen hinterlegen
-        \item Benutzer erhält eine Bestätigung des eingerichteten Abonnements
-        \item Benutzer kann das Abonnement jederzeit in seinem Profil einsehen und verwalten
-    \end{itemize} \\
-    \hline
-    \textbf{Priority} & Mittel \\
-    \hline
+\hline
+\textbf{ID} & US-003 \\
+\hline
+\textbf{Title} & Set Up a Toilet Paper Subscription \\
+\hline
+\textbf{User Role} & Registered Customer \\
+\hline
+\textbf{Description} & As a \textit{registered customer}, I want to \textit{set up a regular delivery subscription for toilet paper}, so that \textit{I never run out and can benefit from discounts}. \\
+\hline
+\textbf{Acceptance Criteria} &
+\begin{itemize}[noitemsep, topsep=0pt]
+    \item User can choose from various subscription options (e.g., monthly, quarterly).
+    \item User can specify the product type and quantity for the subscription.
+    \item System clearly displays discounts and benefits of the subscription.
+    \item User must provide payment information for recurring payments.
+    \item User receives confirmation of the established subscription.
+    \item User can view and manage the subscription in their profile at any time.
+\end{itemize} \\
+\hline
+\textbf{Priority} & Medium \\
+\hline
 \end{tabularx}
 
-\subsection{User Story 4: Produktbewertung abgeben}
+\subsection{User Story 4: Submit Product Review}
 \begin{tabularx}{\textwidth}{|l|X|}
-    \hline
-    \textbf{ID} & US-004 \\
-    \hline
-    \textbf{Title} & Abgabe einer Produktbewertung \\
-    \hline
-    \textbf{User Role} & Registrierter Kunde \\
-    \hline
-    \textbf{Description} & Als \textit{registrierter Kunde} möchte ich \textit{eine Bewertung für ein kürzlich gekauftes Produkt abgeben}, damit \textit{ich anderen Kunden meine Erfahrung mitteilen und dem Hersteller Feedback geben kann}. \\
-    \hline
-    \textbf{Acceptance Criteria} & 
-    \begin{itemize}
-        \item Benutzer kann nur Produkte bewerten, die er tatsächlich gekauft hat
-        \item Bewertungssystem ermöglicht Sternebewertung (1-5) und Textkommentar
-        \item Benutzer kann Fotos zu seiner Bewertung hochladen
-        \item Bewertungen werden moderiert, bevor sie veröffentlicht werden
-        \item Andere Benutzer können Bewertungen als hilfreich markieren
-        \item Benutzer kann seine eigenen Bewertungen später bearbeiten oder löschen
-    \end{itemize} \\
-    \hline
-    \textbf{Priority} & Mittel \\
-    \hline
+\hline
+\textbf{ID} & US-004 \\
+\hline
+\textbf{Title} & Submit a Product Review \\
+\hline
+\textbf{User Role} & Registered Customer \\
+\hline
+\textbf{Description} & As a \textit{registered customer}, I want to \textit{submit a review for a recently purchased product}, so that \textit{I can share my experience with other customers and provide feedback to the manufacturer}. \\
+\hline
+\textbf{Acceptance Criteria} &
+\begin{itemize}[noitemsep, topsep=0pt]
+    \item User can only review products they have actually purchased.
+    \item Review system allows star rating (1-5) and text comments.
+    \item User can optionally upload photos with their review.
+    \item Reviews are moderated before being published.
+    \item Other users can mark reviews as helpful.
+    \item User can edit or delete their own reviews later.
+\end{itemize} \\
+\hline
+\textbf{Priority} & Medium \\
+\hline
 \end{tabularx}
 
-\subsection{User Story 5: Newsletter-Anmeldung}
+\subsection{User Story 5: Newsletter Sign-up}
 \begin{tabularx}{\textwidth}{|l|X|}
-    \hline
-    \textbf{ID} & US-005 \\
-    \hline
-    \textbf{Title} & Anmeldung zum Newsletter \\
-    \hline
-    \textbf{User Role}
+\hline
+\textbf{ID} & US-005 \\
+\hline
+\textbf{Title} & Sign Up for Newsletter \\
+\hline
+\textbf{User Role} & Unregistered Visitor / Registered Customer \\
+\hline
+\textbf{Description} & As a \textit{visitor or registered customer}, I want to \textit{sign up for the newsletter}, so that \textit{I can be informed about new products, offers, and promotions}. \\
+\hline
+\textbf{Acceptance Criteria} &
+\begin{itemize}[noitemsep, topsep=0pt]
+    \item User can find a newsletter sign-up form (e.g., in the footer or a dedicated section).
+    \item User needs to provide a valid email address.
+    \item System validates the email address format.
+    \item User receives a confirmation message upon successful sign-up (potentially requires double opt-in via email confirmation).
+    \item User can easily unsubscribe from the newsletter (e.g., via a link in the email).
+    \item Administrator can manage the list of subscribers.
+\end{itemize} \\
+\hline
+\textbf{Priority} & Low \\
+\hline
 \end{tabularx}
 
+% Adding sections required by the Portfolio Assignment
+
+\section{Non-Functional Requirements}
+Beyond the specific features, the application must meet the following quality attributes:
+
+\subsection{Usability}
+The webshop must be intuitive and easy to navigate. Key information (products, prices, cart) should be easily accessible. The checkout process must be clear and straightforward. Consistency in design and interaction patterns across the application is required.
+
+\subsection{Responsiveness}
+The application must be fully responsive and provide an optimal viewing and interaction experience across a wide range of devices, including desktops, tablets, and smartphones. Layouts should adapt gracefully to different screen sizes and orientations.
+
+\subsection{Accessibility}
+The webshop should strive to meet WCAG 2.1 Level AA guidelines. This includes providing text alternatives for non-text content, ensuring keyboard navigability, sufficient color contrast, and compatibility with common assistive technologies.
+
+\subsection{Performance}
+The application should load quickly, typically within 3 seconds on a standard connection. Interactions (e.g., adding to cart, filtering products) should feel instantaneous. Backend response times should be optimized, and frontend assets (images, scripts) should be efficiently managed.
+
+\subsection{Security}
+User data (personal information, payment details) must be handled securely. Input validation must be implemented on both frontend and backend. Secure practices for authentication, session management, and data transmission (HTTPS) are mandatory.
+
+\section{Technology Assumptions}
+\begin{itemize}
+    \item \textbf{Frontend Framework:} The frontend will be developed using the React framework, as required by the course.
+    \item \textbf{State Management:} A suitable state management library (e.g., Context API, Redux, Zustand) will be used for managing application state.
+    \item \textbf{Styling:} CSS Modules, Styled Components, or a UI library like Material UI or Tailwind CSS might be used for styling.
+    \item \textbf{Backend Interaction:} Communication with the backend will primarily use REST APIs with JSON as the data format.
+    \item \textbf{Backend Technology:} The backend system (potentially developed in the Backend Systems course) could be based on Node.js/Express, Python/Django/Flask, Java/Spring, or another suitable technology capable of providing the required API endpoints. Alternatively, a public API could be integrated if appropriate for the project scope.
+    \item \textbf{Version Control:} Git will be used for version control, likely hosted on a platform like GitHub or GitLab.
+\end{itemize}
+
+\section{Project Constraints}
+\begin{itemize}
+    \item \textbf{Timeline:} The project must be completed within the timeframe specified by the Frontend Systems course, including the final submission deadline (2025-04-30).
+    \item \textbf{Team Size:} The development team consists of 4 students. Workload distribution and collaboration are key constraints.
+    \item \textbf{Scope Limitation:} Due to time constraints, not all "Nice-to-have" features may be fully implemented. Priority will be given to "Must-have" features and core functionality.
+    \item \textbf{Resource Availability:} The project relies on the availability and stability of the chosen backend API (whether custom-built or public).
+    \item \textbf{Technology Stack:} The mandatory use of React for the frontend dictates certain architectural choices and development practices.
+\end{itemize}
+
+\section*{Acknowledgement of AI Technologies}
+% Placeholder text according to assignment guidelines. Adjust if necessary.
+AI assistants may have been used during the creation of this document for tasks such as brainstorming feature ideas, translating content, refining text, or checking grammar. For example, tools like ChatGPT or Grammarly might have assisted in drafting initial sections or improving readability. However, all content has been reviewed, critically evaluated, and edited by the authors to ensure it accurately reflects the project requirements and adheres to the assignment guidelines. The final structure, content decisions, and responsibility for this document rest entirely with the authors.
 
 \end{document}
