@@ -1,11 +1,10 @@
 \documentclass[a4paper,11pt]{article}
 
-% Packages
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel} % Set language to English
+\usepackage[english]{babel}
 \usepackage{graphicx}
-\usepackage{hyperref} % Required for clickable email links
+\usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage{xcolor}
@@ -14,48 +13,36 @@
 \usepackage{geometry}
 \usepackage{titlesec}
 
-% Page margins
 \geometry{a4paper, margin=2.5cm}
 
-% Header and Footer
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{Frontend Systems - Portfolio Assignment 01}
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{THWS - Prof. Dr. Peter Braun}
 
-% Section formatting
 \titleformat{\section}
 {\normalfont\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}
 {\normalfont\large\bfseries}{\thesubsection}{1em}{}
 
-% Document information
 \title{\textbf{Requirements Document\\[0.5em]\Large Rollenreich}}
 \author{Frontend Systems - Portfolio Assignment 01}
-\date{April 9, 2025} % Use specific date or \today
+\date{April 9, 2025}
 
 \begin{document}
 
 \maketitle
 
-% Updated Author Information section based on Search Result [4]
 \section*{Author Information}
-\begin{center}
-\begin{tabular}{|l|l|l|}
-\hline
-\textbf{Name} & \textbf{Email Address} & \textbf{Matriculation Number} \\
+\begin{tabularx}{\textwidth}{l X r}
+\textbf{Name} & \textbf{Email} & \textbf{Matrikelnummer} \\
 \hline
 Maximilian Keller & \href{mailto:maximilian.keller@study.thws.de}{maximilian.keller@study.thws.de} & 5123018 \\
-\hline
 Tom Knoblach & \href{mailto:tom.knoblach@study.thws.de}{tom.knoblach@study.thws.de} & 5123034 \\
-\hline
 David Heppenheimer & \href{mailto:david.heppenheimer@study.thws.de}{david.heppenheimer@study.thws.de} & 5123026 \\
-\hline
 Zacharias Priller & \href{mailto:zacharias.priller@study.thws.de}{zacharias.priller@study.thws.de} & 5123014 \\
-\hline
-\end{tabular}
-\end{center}
+\end{tabularx}
 
 \tableofcontents
 
@@ -96,23 +83,25 @@ The following features are planned for the Rollenreich webshop, divided into mus
 \begin{enumerate}[label=\textbf{MF\arabic*:}]
     \item \textbf{Product Catalog} - Clear presentation of all products with filter functions by categories (Luxury, Brand Collaborations, Eco-Friendly), prices, and availability.
     \item \textbf{User Accounts} - Registration and login system with personal profile, order history, and saved payment information.
-    \item \textbf{Shopping Cart and Checkout} - Functional shopping cart with quantity adjustment and a secure, multi-step checkout process.
+    \item \textbf{Shopping Cart and Checkout} - Functional shopping cart with quantity adjustment and a multi-step checkout process.
     \item \textbf{Product Detail Pages} - Detailed information on each product with high-quality images, descriptions, prices, and availability.
     \item \textbf{Responsive Design} - Full functionality on all devices (Desktop, Tablet, Smartphone).
-    \item \textbf{Review System} - Ability for customers to rate products and leave reviews.
-    \item \textbf{Search Functionality} - Powerful search function with auto-completion and filter options.
+    \item \textbf{Search Functionality} - Search function for products with filters and sorting options.
+    
+    % TODO: Subscription model is subject to change and switch places depending on Peter's feedback
 \end{enumerate}
 
 \subsection{Nice-to-have Features}
 \begin{enumerate}[label=\textbf{NF\arabic*:}]
-    \item \textbf{Newsletter System} - Sign-up for regular updates on new products and special offers.
+    % TODO: Subscription model is subject to change and switch places depending on Peter's feedback
     \item \textbf{Subscription Models} - Regular delivery of toilet paper with discount benefits and exclusive products.
+    
+    \item \textbf{Payment Options} - Support for various payment methods (credit card, PayPal, direct debit).´
+    \item \textbf{Review System} - Ability for customers to rate products and leave reviews.
+    \item \textbf{Newsletter System} - Sign-up for regular updates on new products and special offers.
     \item \textbf{Wishlist} - Ability to save products for later purchase.
     \item \textbf{Social Media Integration} - Sharing products on various social platforms.
-    \item \textbf{Personalized Product Recommendations} - Based on purchase history and browsing behavior.
-    \item \textbf{Live Chat Support} - Direct customer service for questions and issues.
     \item \textbf{Limited Editions} - Time-limited special offers and exclusive collections.
-    \item \textbf{Virtual Bathroom Designer} - Tool for visualizing products in one's own bathroom.
 \end{enumerate}
 
 \section{User Roles and Interactions}
@@ -194,7 +183,7 @@ The following describe the main user stories and use cases for the Rollenreich w
 \textbf{Description} & As an \textit{unregistered visitor}, I want to \textit{search for luxury toilet paper rolls and purchase one}, so that \textit{I can find a special gift for a friend}. \\
 \hline
 \textbf{Acceptance Criteria} &
-\begin{itemize}[noitemsep, topsep=0pt] % Reduced spacing for inner lists
+\begin{itemize}[noitemsep, topsep=0pt]
     \item User can use the search function to search for "Luxury" or "Gold".
     \item User can filter products by price, availability, and category.
     \item User can view product details and reviews.
@@ -307,8 +296,6 @@ The following describe the main user stories and use cases for the Rollenreich w
 \hline
 \end{tabularx}
 
-% Adding sections required by the Portfolio Assignment
-
 \section{Non-Functional Requirements}
 Beyond the specific features, the application must meet the following quality attributes:
 
@@ -347,7 +334,6 @@ User data (personal information, payment details) must be handled securely. Inpu
 \end{itemize}
 
 \section*{Acknowledgement of AI Technologies}
-% Placeholder text according to assignment guidelines. Adjust if necessary.
-AI assistants may have been used during the creation of this document for tasks such as brainstorming feature ideas, translating content, refining text, or checking grammar. For example, tools like ChatGPT or Grammarly might have assisted in drafting initial sections or improving readability. However, all content has been reviewed, critically evaluated, and edited by the authors to ensure it accurately reflects the project requirements and adheres to the assignment guidelines. The final structure, content decisions, and responsibility for this document rest entirely with the authors.
-
+This document was drafted and refined using Gemini 2.5 Pro based on an outline containing related information. The authors reviewed, revised, and enhanced the Gemini 2.5 Pro
+output with additional content.
 \end{document}
