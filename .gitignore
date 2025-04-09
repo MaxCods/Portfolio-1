@@ -1,0 +1,37 @@
+# LaTeX intermediate and output files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Editor-specific files
+*.swp
+*~
+*.bak
+*.tmp
+
+# VS Code
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# PDF output
+*.pdf
