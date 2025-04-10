@@ -49,35 +49,34 @@ Zacharias Priller & \href{mailto:zacharias.priller@study.thws.de}{zacharias.pril
 \newpage
 
 \section{Project Overview}
-Rollenreich is an innovative online shop specializing in the sale of high-quality and unusual toilet accessories. The main product is toilet paper rolls in various designs, from luxurious gold and silver editions to brand collaborations with well-known fashion brands. The project aims to develop an amusing but functionally high-quality webshop that offers customers a unique shopping experience in the bathroom equipment sector.
+Rollenreich is a modern e-commerce web application built with React, showcasing a playful concept around luxury and design-focused toilet paper products. It aims to combine humor and high-end shopping experiences, providing users with an intuitive and visually appealing interface to browse and purchase designer toilet paper.
 
 \subsection{Project Background}
-The idea for Rollenreich arose from the observation that even everyday products like toilet paper can become lifestyle products through creative design and marketing concepts. In an era where personalization and individuality are increasingly important, even in the home, Rollenreich offers a humorous yet high-quality alternative to conventional bathroom products. The project serves as a university project for the Frontend Systems course and aims to demonstrate the development of a complete e-commerce system.
+The concept was born from the idea that even mundane products like toilet paper can be elevated into lifestyle statements. Rollenreich embraces this by offering extravagant and unique product designs, and serves as a demonstration of technical skills in frontend systems, particularly focusing on component-based design, responsive interfaces, and integration with backend APIs.
 
 \subsection{Target Audience}
-The target audience for Rollenreich includes:
+The application targets users who:
 \begin{itemize}
-    \item Design-conscious consumers who value aesthetic details in their homes
-    \item Gift buyers looking for unusual and humorous presents
-    \item Collectors of limited editions and brand collaborations
-    \item Individuals with higher incomes willing to pay for luxury versions of everyday products
-    \item Environmentally conscious consumers seeking sustainable toilet paper alternatives
-    \item Young adults (25-40 years) open to innovative and unconventional products
+    \item Appreciate design and novelty in everyday items
+    \item Seek unique gifts or collector’s items
+    \item Have a higher disposable income and appreciate premium quality
+    \item Are interested in eco-conscious, humorous, or limited-edition alternatives
+    \item Are tech-savvy and open to online shopping experiences
 \end{itemize}
 
 \subsection{Project Goals}
 The main goals of the Rollenreich project are:
 \begin{itemize}
-    \item Develop a user-friendly, responsive webshop with an intuitive shopping experience
-    \item Implement a secure and efficient ordering and payment system
-    \item Create an entertaining and memorable brand presence for toilet accessories
-    \item Integrate customer loyalty features such as newsletters, subscription models, and a review system
-    \item Build a community around bathroom culture and design
-    \item Demonstrate technical skills in frontend development using React
+    \item Deliver a functional and visually consistent React application with a modular component structure
+    \item Implement smooth navigation between multiple views using React Router
+    \item Enable interaction with a backend API through asynchronous calls (e.g., product loading, order submission)
+    \item Provide a responsive, usable layout for both desktop and mobile users
+    \item Ensure every feature is accessible through the UI (no manual URL manipulation required)
+    \item Meet accessibility and performance guidelines
 \end{itemize}
 
 \section{Key Features}
-The following features are planned for the Rollenreich webshop, divided into must-have and nice-to-have features.
+Features are divided into must-have and nice-to-have based on importance for MVP delivery and alignment with course requirements.
 
 \subsection{Must-have Features}
 \begin{enumerate}[label=\textbf{MF\arabic*:}]
@@ -90,6 +89,17 @@ The following features are planned for the Rollenreich webshop, divided into mus
     
     % TODO: Subscription model is subject to change and switch places depending on Peter's feedback
 \end{enumerate}
+% alternative:
+%\subsection{Must-have Features}
+%\begin{enumerate}[label=\textbf{MF\arabic*:}]
+%    \item \textbf{Product Catalog with Filters} – Component for browsing and filtering products by category, price, availability.
+%    \item \textbf{Responsive Layout} – Responsive views that adjust to desktop, tablet, and mobile devices.
+%    \item \textbf{User Accounts} – Register, log in, and manage user profile (with persistent state across sessions).
+%    \item \textbf{Shopping Cart \& Checkout Flow} – Add/remove items, quantity adjustment, and guest/registered checkout views.
+%    \item \textbf{Product Detail View} – Dedicated view with high-resolution images, descriptions, and availability info.
+%    \item \textbf{API Integration} – Fetch product data and post orders via asynchronous backend calls (fetch/axios).
+%    \item \textbf{Navigation Between Views} – Implemented via React Router with routes like `/home`, `/products/:id`, `/checkout`, etc.
+%\end{enumerate}
 
 \subsection{Nice-to-have Features}
 \begin{enumerate}[label=\textbf{NF\arabic*:}]
@@ -103,6 +113,16 @@ The following features are planned for the Rollenreich webshop, divided into mus
     \item \textbf{Social Media Integration} - Sharing products on various social platforms.
     \item \textbf{Limited Editions} - Time-limited special offers and exclusive collections.
 \end{enumerate}
+% alternative:
+%\subsection{Nice-to-have Features}
+%\begin{enumerate}[label=\textbf{NF\arabic*:}]
+%    \item \textbf{Subscription Models} – Selectable delivery plans (e.g., monthly) with recurring payment support.
+%    \item \textbf{Review System} – Allow users to rate and review purchased items.
+%    \item \textbf{Newsletter Integration} – Sign-up and unsubscribe system with double opt-in.
+%    \item \textbf{Wishlist Feature} – Save favorite products across sessions.
+%    \item \textbf{Limited Editions} – Special categories or badges for time-limited items.
+%    \item \textbf{Social Media Sharing} – Basic share buttons on product pages.
+%\end{enumerate}
 
 \section{User Roles and Interactions}
 Rollenreich serves different types of users with varying needs and interaction patterns.
@@ -313,15 +333,34 @@ The application should load quickly, typically within 3 seconds on a standard co
 
 \subsection{Security}
 User data (personal information, payment details) must be handled securely. Input validation must be implemented on both frontend and backend. Secure practices for authentication, session management, and data transmission (HTTPS) are mandatory.
+% alternative:
+%\section{Non-Functional Requirements}
+
+%\subsection{Usability}
+%Design will be intuitive and follow common UI conventions. All actions (like checkout, subscription management) will be accessible through clear UI elements.
+
+%\subsection{Responsiveness}
+%The app will use CSS media queries and responsive components to ensure a good experience across mobile and desktop screen sizes.
+
+%\subsection{Accessibility}
+%UI will consider WCAG 2.1 Level AA standards. Semantic HTML, focus indicators, ARIA labels, and sufficient contrast will be implemented.
+
+%\subsection{Performance}
+%React code will be optimized via lazy loading and effective state management. Static assets will be optimized for web delivery.
+
+%\subsection{Security}
+%Secure API usage, HTTPS enforcement, input validation, and no exposure of sensitive user data. Authentication will follow best practices.
+
 
 \section{Technology Assumptions}
 \begin{itemize}
-    \item \textbf{Frontend Framework:} The frontend will be developed using the React framework, as required by the course.
-    \item \textbf{State Management:} A suitable state management library (e.g., Context API, Redux, Zustand) will be used for managing application state.
-    \item \textbf{Styling:} CSS Modules, Styled Components, or a UI library like Material UI or Tailwind CSS might be used for styling.
-    \item \textbf{Backend Interaction:} Communication with the backend will primarily use REST APIs with JSON as the data format.
-    \item \textbf{Backend Technology:} The backend system (potentially developed in the Backend Systems course) could be based on Node.js/Express, Python/Django/Flask, Java/Spring, or another suitable technology capable of providing the required API endpoints. Alternatively, a public API could be integrated if appropriate for the project scope.
-    \item \textbf{Version Control:} Git will be used for version control, likely hosted on a platform like GitHub or GitLab.
+    \item \textbf{Frontend Framework:} The application will be developed using the Next.js framework, which combines both frontend and backend in a React-based environment.
+    \item \textbf{Styling:} TODO: TALK TO PETER ABOUT THIS ONE (FRAMEWORKS) One or more separate `.css` files will be used, following a modular structure. Consistency in colors, fonts, and spacing is prioritized.
+    \item \textbf{Backend Interaction:} tRPC will be used for type-safe communication between the frontend and backend, avoiding the need for manually defined REST or GraphQL APIs.
+    \item \textbf{Backend Technology:} Backend logic will be integrated into the Next.js application using its built-in API routes.
+    \item \textbf{Database \& ORM:} PostgreSQL will be used as the database system, with Prisma as the Object-Relational Mapper (ORM) to enable type-safe and efficient database access.
+    \item \textbf{Version Control:} Git will be used for version control, with the repository hosted on GitHub.
+    \item \textbf{Containerization:} The entire application stack, including the Next.js app and PostgreSQL database, will be containerized and orchestrated using Docker Compose for simplified local development and deployment.
 \end{itemize}
 
 \section{Project Constraints}
@@ -329,11 +368,11 @@ User data (personal information, payment details) must be handled securely. Inpu
     \item \textbf{Timeline:} The project must be completed within the timeframe specified by the Frontend Systems course, including the final submission deadline (2025-04-30).
     \item \textbf{Team Size:} The development team consists of 4 students. Workload distribution and collaboration are key constraints.
     \item \textbf{Scope Limitation:} Due to time constraints, not all "Nice-to-have" features may be fully implemented. Priority will be given to "Must-have" features and core functionality.
-    \item \textbf{Resource Availability:} The project relies on the availability and stability of the chosen backend API (whether custom-built or public).
+    \item \textbf{Resource Availability:} The project relies on the availability and stability of the custom-built backend API. Any changes in the backend may affect the frontend development.
     \item \textbf{Technology Stack:} The mandatory use of React for the frontend dictates certain architectural choices and development practices.
 \end{itemize}
 
 \section*{Acknowledgement of AI Technologies}
-This document was drafted and refined using Gemini 2.5 Pro based on an outline containing related information. The authors reviewed, revised, and enhanced the Gemini 2.5 Pro
-output with additional content.
+This document was firstly drafted and refined collaboratively using Gemini 2.5 Pro based on an outline containing related information. The authors reviewed, revised, and enhanced the Gemini 2.5 Pro
+output with additional content. 
 \end{document}
