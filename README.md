@@ -2,19 +2,19 @@
 
 This repository contains the LaTeX source for the **Requirements Document** of the *Rollenreich* project. It is part of the **Frontend Systems - Portfolio Assignment 01** at the Technische Hochschule Würzburg-Schweinfurt (THWS), supervised by **Prof. Dr. Peter Braun**.
 
-## 🧻 Project Overview
+## Project Overview
 
 **Rollenreich** is a React-based web application simulating a high-end toilet paper webshop with luxury, eco, and limited-edition products. The project demonstrates modern frontend architecture, API integration, responsive design, and component-based development.
 
-## 📄 Contents of This Repository
+## Contents of This Repository
 
 - `Rollenreich_Requirements_Document.tex` – Main LaTeX source file for the requirements document
 - `.gitignore` – Optional, for LaTeX auxiliary files (`*.aux`, `*.log`, `*.out`, etc.)
 - `README.md` – This file
 
-> 💡 The compiled PDF is **not** tracked in this repository to avoid merge conflicts during collaboration. You can generate it locally using any LaTeX environment.
+> The compiled PDF is **not** tracked in this repository to avoid merge conflicts during collaboration. You can generate it locally using any LaTeX environment.
 
-## 👥 Team Members
+## Team Members
 
 | Name                 | Email                                          | Matrikelnummer |
 |----------------------|-----------------------------------------------|----------------|
@@ -23,7 +23,7 @@ This repository contains the LaTeX source for the **Requirements Document** of t
 | David Heppenheimer   | david.heppenheimer@study.thws.de              | 5123026        |
 | Zacharias Priller    | zacharias.priller@study.thws.de               | 5123014        |
 
-## 🛠 How to Compile
+## How to Compile
 
 To generate the PDF locally:
 
