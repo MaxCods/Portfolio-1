@@ -67,12 +67,11 @@ The application targets users who:
 \subsection{Project Goals}
 The main goals of the Rollenreich project are:
 \begin{itemize}
-    \item Deliver a functional and visually consistent React application with a modular component structure
-    \item Implement smooth navigation between multiple views using React Router
-    \item Enable interaction with a backend API through asynchronous calls (e.g., product loading, order submission)
+    \item Deliver a functional and visually consistent e-commerce webshop built with React, featuring a modular component structure
+    \item Implement smooth navigation between multiple views
+    \item Enable interaction with a backend API through asynchronous calls (e.g., product loading, user authentication)
     \item Provide a responsive, usable layout for both desktop and mobile users
     \item Ensure every feature is accessible through the UI (no manual URL manipulation required)
-    \item Meet accessibility and performance guidelines
 \end{itemize}
 
 \section{Key Features}
@@ -81,48 +80,21 @@ Features are divided into must-have and nice-to-have based on importance for MVP
 \subsection{Must-have Features}
 \begin{enumerate}[label=\textbf{MF\arabic*:}]
     \item \textbf{Product Catalog} - Clear presentation of all products with filter functions by categories (Luxury, Brand Collaborations, Eco-Friendly), prices, and availability.
-    \item \textbf{User Accounts} - Registration and login system with personal profile, order history, and saved payment information.
-    \item \textbf{Shopping Cart and Checkout} - Functional shopping cart with quantity adjustment and a multi-step checkout process.
-    \item \textbf{Product Detail Pages} - Detailed information on each product with high-quality images, descriptions, prices, and availability.
+    \item \textbf{User Accounts} - Registration and login system with personal profile, order history.
+    \item \textbf{Shopping Cart and Checkout} - Functional shopping cart with quantity adjustment and a checkout process.
+    \item \textbf{Product Detail Pages} - Detailed information on each product with images, descriptions, prices, and availability.
     \item \textbf{Responsive Design} - Full functionality on all devices (Desktop, Tablet, Smartphone).
     \item \textbf{Search Functionality} - Search function for products with filters and sorting options.
-    
-    % TODO: Subscription model is subject to change and switch places depending on Peter's feedback
-\end{enumerate}
-% alternative:
-%\subsection{Must-have Features}
-%\begin{enumerate}[label=\textbf{MF\arabic*:}]
-%    \item \textbf{Product Catalog with Filters} – Component for browsing and filtering products by category, price, availability.
-%    \item \textbf{Responsive Layout} – Responsive views that adjust to desktop, tablet, and mobile devices.
-%    \item \textbf{User Accounts} – Register, log in, and manage user profile (with persistent state across sessions).
-%    \item \textbf{Shopping Cart \& Checkout Flow} – Add/remove items, quantity adjustment, and guest/registered checkout views.
-%    \item \textbf{Product Detail View} – Dedicated view with high-resolution images, descriptions, and availability info.
-%    \item \textbf{API Integration} – Fetch product data and post orders via asynchronous backend calls (fetch/axios).
-%    \item \textbf{Navigation Between Views} – Implemented via React Router with routes like `/home`, `/products/:id`, `/checkout`, etc.
-%\end{enumerate}
+    \end{enumerate}
 
 \subsection{Nice-to-have Features}
 \begin{enumerate}[label=\textbf{NF\arabic*:}]
-    % TODO: Subscription model is subject to change and switch places depending on Peter's feedback
     \item \textbf{Subscription Models} - Regular delivery of toilet paper with discount benefits and exclusive products.
-    
-    \item \textbf{Payment Options} - Support for various payment methods (credit card, PayPal, direct debit).´
     \item \textbf{Review System} - Ability for customers to rate products and leave reviews.
     \item \textbf{Newsletter System} - Sign-up for regular updates on new products and special offers.
     \item \textbf{Wishlist} - Ability to save products for later purchase.
-    \item \textbf{Social Media Integration} - Sharing products on various social platforms.
     \item \textbf{Limited Editions} - Time-limited special offers and exclusive collections.
 \end{enumerate}
-% alternative:
-%\subsection{Nice-to-have Features}
-%\begin{enumerate}[label=\textbf{NF\arabic*:}]
-%    \item \textbf{Subscription Models} – Selectable delivery plans (e.g., monthly) with recurring payment support.
-%    \item \textbf{Review System} – Allow users to rate and review purchased items.
-%    \item \textbf{Newsletter Integration} – Sign-up and unsubscribe system with double opt-in.
-%    \item \textbf{Wishlist Feature} – Save favorite products across sessions.
-%    \item \textbf{Limited Editions} – Special categories or badges for time-limited items.
-%    \item \textbf{Social Media Sharing} – Basic share buttons on product pages.
-%\end{enumerate}
 
 \section{User Roles and Interactions}
 Rollenreich serves different types of users with varying needs and interaction patterns.
@@ -136,7 +108,6 @@ Rollenreich serves different types of users with varying needs and interaction p
         \item Browsing the product catalog
         \item Reading product reviews
         \item Adding products to the shopping cart
-        \item Performing a guest checkout
         \item Registering for a user account
         \item Signing up for the newsletter
     \end{itemize}
@@ -148,13 +119,12 @@ Rollenreich serves different types of users with varying needs and interaction p
     \item \textbf{Responsibilities:} Maintaining their own account information, adhering to terms of service.
     \item \textbf{Key Interactions:}
     \begin{itemize}
-        \item Logging in and managing personal profile
-        \item Saving delivery and payment information
+        \item Logging in and viewing personal profile
+        \item Saving delivery information
         \item Viewing order history
         \item Writing product reviews
         \item Managing subscriptions (if applicable)
         \item Creating and editing wishlists
-        \item Participating in loyalty programs
     \end{itemize}
 \end{itemize}
 
@@ -165,8 +135,7 @@ Rollenreich serves different types of users with varying needs and interaction p
     \item \textbf{Key Interactions:}
     \begin{itemize}
         \item Selecting and customizing subscription plans
-        \item Changing delivery frequency
-        \item Pausing or canceling subscriptions
+        \item Canceling subscriptions
         \item Accessing exclusive subscriber offers
         \item Managing automatic payments
     \end{itemize}
@@ -183,11 +152,10 @@ Rollenreich serves different types of users with varying needs and interaction p
         \item Handling customer data and inquiries
         \item Moderating product reviews
         \item Creating and sending newsletters
-        \item Monitoring system status
-        \item Generating reports and statistics
     \end{itemize}
 \end{itemize}
 
+\newpage
 \section{User Stories / Use Cases}
 The following describe the main user stories and use cases for the Rollenreich webshop.
 
@@ -208,7 +176,6 @@ The following describe the main user stories and use cases for the Rollenreich w
     \item User can filter products by price, availability, and category.
     \item User can view product details and reviews.
     \item User can add a product to the shopping cart.
-    \item User can complete the checkout process as a guest.
     \item User receives an order confirmation via email.
 \end{itemize} \\
 \hline
@@ -225,14 +192,14 @@ The following describe the main user stories and use cases for the Rollenreich w
 \hline
 \textbf{User Role} & Unregistered Visitor \\
 \hline
-\textbf{Description} & As an \textit{unregistered visitor}, I want to \textit{create a user account}, so that \textit{I can track my orders and benefit from regular customer advantages}. \\
+\textbf{Description} & As an \textit{unregistered visitor}, I want to \textit{create a user account}, so that \textit{I can see my orders and benefit from regular customer advantages}. \\
 \hline
 \textbf{Acceptance Criteria} &
 \begin{itemize}[noitemsep, topsep=0pt]
     \item User can create an account via a "Register" button.
     \item User must provide email, password, and personal information.
     \item System validates the email address format and password strength.
-    \item User receives a confirmation email (possibly with an activation link).
+    \item User receives a confirmation email.
     \item After activation/confirmation, the user can log in with their credentials.
     \item User can view and edit their profile after logging in.
 \end{itemize} \\
@@ -255,7 +222,7 @@ The following describe the main user stories and use cases for the Rollenreich w
 \textbf{Acceptance Criteria} &
 \begin{itemize}[noitemsep, topsep=0pt]
     \item User can choose from various subscription options (e.g., monthly, quarterly).
-    \item User can specify the product type and quantity for the subscription.
+    \item User can select the product type and quantity for the subscription.
     \item System clearly displays discounts and benefits of the subscription.
     \item User must provide payment information for recurring payments.
     \item User receives confirmation of the established subscription.
@@ -281,7 +248,6 @@ The following describe the main user stories and use cases for the Rollenreich w
 \begin{itemize}[noitemsep, topsep=0pt]
     \item User can only review products they have actually purchased.
     \item Review system allows star rating (1-5) and text comments.
-    \item User can optionally upload photos with their review.
     \item Reviews are moderated before being published.
     \item Other users can mark reviews as helpful.
     \item User can edit or delete their own reviews later.
@@ -323,34 +289,16 @@ Beyond the specific features, the application must meet the following quality at
 The webshop must be intuitive and easy to navigate. Key information (products, prices, cart) should be easily accessible. The checkout process must be clear and straightforward. Consistency in design and interaction patterns across the application is required.
 
 \subsection{Responsiveness}
-The application must be fully responsive and provide an optimal viewing and interaction experience across a wide range of devices, including desktops, tablets, and smartphones. Layouts should adapt gracefully to different screen sizes and orientations.
+The application must be fully responsive and provide an optimal viewing and interaction experience across a wide range of devices, including desktops, tablets, and smartphones. Layouts should adapt to different screen sizes and orientations as best as possible.
 
 \subsection{Accessibility}
-The webshop should strive to meet WCAG 2.1 Level AA guidelines. This includes providing text alternatives for non-text content, ensuring keyboard navigability, sufficient color contrast, and compatibility with common assistive technologies.
+The webshop should take basic accessibility measures into account. This includes, for example, easy keyboard navigation, high-contrast and readable colors, as well as general compatibility with common assistive technologies, as far as this is feasible within the scope of the project.
 
 \subsection{Performance}
 Interactions (e.g., adding to cart, filtering products, navigating pages) should feel instantaneous. Backend response times and queries should be optimized, and frontend assets (images, scripts) should be efficiently managed.
 
 \subsection{Security}
 User data (personal information, payment details) must be handled securely. Input validation must be implemented on both frontend and backend. Secure practices for authentication, session management, and data transmission are mandatory.
-% alternative:
-%\section{Non-Functional Requirements}
-
-%\subsection{Usability}
-%Design will be intuitive and follow common UI conventions. All actions (like checkout, subscription management) will be accessible through clear UI elements.
-
-%\subsection{Responsiveness}
-%The app will use CSS media queries and responsive components to ensure a good experience across mobile and desktop screen sizes.
-
-%\subsection{Accessibility}
-%UI will consider WCAG 2.1 Level AA standards. Semantic HTML, focus indicators, ARIA labels, and sufficient contrast will be implemented.
-
-%\subsection{Performance}
-%React code will be optimized via lazy loading and effective state management. Static assets will be optimized for web delivery.
-
-%\subsection{Security}
-%Secure API usage, HTTPS enforcement, input validation, and no exposure of sensitive user data. Authentication will follow best practices.
-
 
 \section{Technology Assumptions}
 \begin{itemize}
@@ -358,7 +306,7 @@ User data (personal information, payment details) must be handled securely. Inpu
     \item \textbf{Styling:} Tailwind CSS will be used for styling the application, enabling utility-first design and consistent styling across components through a scalable and maintainable approach.
     \item \textbf{Backend Interaction:} The frontend will communicate with backend routes using standard Next.js API endpoints, leveraging built-in functionality for server-side logic.
     \item \textbf{Backend Technology:} Backend logic will be integrated into the Next.js application using its built-in API routes.
-    \item \textbf{Database \& ORM:} PostgreSQL will be used as the database system, with Prisma as the Object-Relational Mapper (ORM) to enable type-safe and efficient database access.
+    \item \textbf{Database \& ORM:} PostgreSQL will be used as the database system, with an Object-Relational Mapper (ORM) like Prisma to enable type-safe and efficient database access.
     \item \textbf{Version Control:} Git will be used for version control, with the repository hosted on GitHub.
     \item \textbf{Containerization:} The entire application stack, including the Next.js app and PostgreSQL database, will be containerized and orchestrated using Docker Compose for simplified local development and deployment.
 \end{itemize}
